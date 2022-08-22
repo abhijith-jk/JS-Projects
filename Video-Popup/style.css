@@ -56,6 +56,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: opacity 0.6s;
 }
 
 .trailer-container video{
@@ -72,6 +74,7 @@ body{
 
 .inactive.trailer-container{
     visibility: hidden;
+    opacity: 0;
 }
 
 .close-icon{
@@ -80,4 +83,8 @@ body{
     right: 30px;
     color: white;
     cursor: pointer;
+}
+
+.close-icon:hover{
+    color: #064441;
 }
