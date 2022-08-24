@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    background: violet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px white;
+    white-space: nowrap;
+}
+
+.drum-kit{
+    text-align: center;
+}
+
+.btn{
+    padding: 30px 50px;
+    margin: 10px;
+    border: none;
+    color: black;
+    font-size: 30px;
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px white;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: red;
+}
+
+.btn:active{
+    background-size: 115%;
+}
