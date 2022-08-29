@@ -24,7 +24,6 @@ main{
 
 .input-section{
     width: auto;
-    /* height: ; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
