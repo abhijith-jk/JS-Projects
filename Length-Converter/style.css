@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: violet;
+}
+
+main{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255,255,255, 0.4);
+    border-radius: 10px;
+}
+
+.input-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-section input{
+    height: 25px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    padding: 5px;
+    background: rgba(255,255,255, 0.4);
+}
+
+.button-section{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.button-section select{
+    border-radius: 5px;
+    border: 2px solid gray;
+    padding: 2px;
+    background: rgba(255,255,255, 0.4);
+    cursor: pointer;
+}
+
+#result-length{
+    cursor: default;
+}
