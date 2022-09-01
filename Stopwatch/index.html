@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="https://cdn.dribbble.com/userupload/2666276/file/large-eba1d69dc8f60387a254a83f884f9e4e.mp4" type="video/mp4">
+    </video>
+    <main>
+        <div class="stopwatch">
+            <p id="minutes">00 :</p>
+            <p id="seconds">&nbsp00 :</p>
+            <p id="milliseconds">&nbsp00</p>
+        </div>
+        <div class="button-section">
+            <button id="start" class="button">Start</button>
+            <button id="stop" class="button">Stop</button>
+            <button id="reset" class="button">Reset</button>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
