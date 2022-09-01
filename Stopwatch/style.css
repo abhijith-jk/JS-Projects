@@ -6,6 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    cursor: url("pointinghand.svg"), auto;
 }
 
 #myVideo {
@@ -74,7 +75,8 @@ main{
     color: white;
     font-size: medium;
     font-family: sans-serif;
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: url("pointinghand.svg"), auto;
     transition: all .3s ease;
 }
 
