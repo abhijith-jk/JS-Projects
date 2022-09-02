@@ -3,25 +3,30 @@ const startbtn = document.getElementById("start");
 const pausebtn = document.getElementById("pause");
 const resetbtn = document.getElementById("reset");
 const stopwatchDisplay = document.querySelector(".stopwatch");
+const videoEl = document.querySelector("video");
 let interval = null;
 
 startbtn.addEventListener("click", ()=>{
     if(interval != null){
         clearInterval(interval);
-    } else
-        interval = setInterval(timer, 10);
+    }
+    videoEl.play();
+    interval = setInterval(timer, 10);
 })
 
 pausebtn.addEventListener("click", ()=>{
+    videoEl.pause();
     clearInterval(interval);
 })
 
 resetbtn.addEventListener("click", ()=>{
+    videoEl.load();
     clearInterval(interval);
-    stopwatchDisplay.textContent = `00 : 00 : 00 : 000`;
+    stopwatchDisplay.innerHTML = `00 : 00 : 00 : 000`;
 })
 
 function timer() {
+    console.log("timer running");
     milliseconds += 10;
     if (milliseconds == 1000) {
         milliseconds = 0;
