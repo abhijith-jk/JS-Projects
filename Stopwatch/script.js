@@ -22,6 +22,7 @@ pausebtn.addEventListener("click", ()=>{
 resetbtn.addEventListener("click", ()=>{
     videoEl.load();
     clearInterval(interval);
+    [milliseconds,seconds,minutes,hours] = [0,0,0,0];
     stopwatchDisplay.innerHTML = `00 : 00 : 00 : 000`;
 })
 
