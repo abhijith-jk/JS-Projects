@@ -18,12 +18,12 @@ function loader(element) {
   }, 300);
 }
 
-function typeresponse(element, text) {
+function typeResponse(element, text) {
   let index = 0;
 
   let interval = setInterval(() => {
     if (index < text.length) {
-      element.innerHTML = text.charAt(index);
+      element.innerHTML += text.charAt(index);
       index++;
     } else clearInterval(interval);
   }, 20);
@@ -41,7 +41,7 @@ function chatStripe(isAi, value, uniqueId) {
   return `
             <div class="wrapper ${isAi && "ai"}">
                 <div class = 'chat'>
-                    <div className = 'profile'>
+                    <div class = 'profile'>
                         <img 
                             src = '${isAi ? bot : user}'
                             alt = '${isAi ? "bot" : "user"}'
@@ -71,6 +71,33 @@ const handleSubmit = async (e) => {
   const messageDiv = document.getElementById(uniqueId);
 
   loader(messageDiv);
+
+  // fetch data from server -> bot response
+
+  const response = await fetch("http://localhost:5000", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      prompt: data.get("prompt"),
+    }),
+  });
+
+  clearInterval(loadInterval);
+  messageDiv.innerHTML = " ";
+
+  if (response.ok) {
+    const data = await response.json();
+    const parsedData = data.bot.trim();
+
+    typeResponse(messageDiv, parsedData);
+  } else {
+    const err = await response.text();
+
+    messageDiv.innerHTML = "Something went wrong";
+    alert(err);
+  }
 };
 
 form.addEventListener("submit", handleSubmit);
